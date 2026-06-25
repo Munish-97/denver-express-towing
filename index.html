@@ -90,12 +90,13 @@
         <div class="booking-card">
           <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; text-align: center;">Request a Tow Now</h3>
           <p style="text-align: center; color: var(--clr-text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Fast dispatch. Transparent pricing.</p>
-          <form id="bookingForm" onsubmit="event.preventDefault(); alert('Booking form submitted successfully! We will contact you shortly.');">
+          <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="7e9e94c2-ed5d-49a6-9f0f-2ee2bf462840">
             <div style="display: flex; flex-direction: column; gap: 1rem;">
-              <input type="text" class="form-control" placeholder="Your Name" required>
-              <input type="tel" class="form-control" placeholder="Phone Number" required>
-              <input type="text" class="form-control" placeholder="Pickup Location" required>
-              <select class="form-control" required>
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+              <input type="text" name="location" class="form-control" placeholder="Pickup Location" required>
+              <select name="service" class="form-control" required>
                 <option value="" disabled selected>Service Needed</option>
                 <option value="towing">Towing</option>
                 <option value="flatbed">Flatbed Towing</option>

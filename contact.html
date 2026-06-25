@@ -98,26 +98,27 @@
       <!-- Contact Form -->
       <div class="premium-form-container fade-in">
         <h2 style="color: var(--clr-gold); margin-bottom: 2rem; text-align: center;">Send Us a Message</h2>
-        <form id="contactForm">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="7e9e94c2-ed5d-49a6-9f0f-2ee2bf462840">
           <div class="form-row">
             <div class="form-group">
               <label for="conName">Full Name</label>
-              <input type="text" id="conName" required placeholder="John Doe">
+              <input type="text" id="conName" name="name" required placeholder="John Doe">
             </div>
             <div class="form-group">
               <label for="conPhone">Phone Number</label>
-              <input type="tel" id="conPhone" required placeholder="+1-111-110-1000">
+              <input type="tel" id="conPhone" name="phone" required placeholder="+1-111-110-1000">
             </div>
           </div>
           
           <div class="form-group">
             <label for="conEmail">Email Address</label>
-            <input type="email" id="conEmail" required placeholder="john@example.com">
+            <input type="email" id="conEmail" name="email" required placeholder="john@example.com">
           </div>
           
           <div class="form-group">
             <label for="conMessage">Message</label>
-            <textarea id="conMessage" required placeholder="How can we help you today?"></textarea>
+            <textarea id="conMessage" name="message" required placeholder="How can we help you today?"></textarea>
           </div>
 
           <button type="submit" class="btn btn-primary btn-full" style="font-size: 1.1rem; padding: 1.2rem;">Send Message</button>
