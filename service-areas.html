@@ -51,78 +51,68 @@
   <!-- Service Areas Search & Map -->
   <section class="inner-section">
     <div class="container">
-      <div class="dashboard-grid">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; color: #fff;">Coverage You Can Rely On</h2>
+        <p style="color: var(--clr-text-muted); max-width: 800px; margin: 0 auto;">Our fleet of heavy-duty and flatbed tow trucks are strategically stationed across the Denver metropolitan area, allowing us to maintain an average response time of 20-30 minutes.</p>
+      </div>
+
+      <div class="location-cards-grid fade-in">
+        <div class="location-card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Downtown Denver</div>
+        <div class="location-card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Aurora</div>
+        <div class="location-card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Lakewood</div>
+        <div class="location-card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Westminster</div>
+        <div class="location-card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Thornton</div>
+        <div class="location-card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Centennial</div>
+        <div class="location-card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Englewood</div>
+        <div class="location-card"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Littleton</div>
+      </div>
+
+      <!-- Area Details Section -->
+      <div class="area-details-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; align-items: center; margin-top: 5rem; background: var(--clr-bg-card); border: 1px solid var(--clr-border); border-radius: 12px; padding: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         
-        <!-- Left: Search & Chips -->
-        <div class="fade-in" style="transition-delay: 0.1s;">
-          <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Coverage You Can Rely On</h2>
-          <p style="color: var(--clr-text-muted); margin-bottom: 2rem;">Our fleet of heavy-duty and flatbed tow trucks are strategically stationed across the Denver metropolitan area, allowing us to maintain an average response time of 20-30 minutes.</p>
-          
-          <div class="areas-container" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem;">
-            <div class="area-chip">Downtown Denver</div>
-            <div class="area-chip">Aurora</div>
-            <div class="area-chip">Lakewood</div>
-            <div class="area-chip">Westminster</div>
-            <div class="area-chip">Thornton</div>
-            <div class="area-chip">Centennial</div>
-            <div class="area-chip">Englewood</div>
-            <div class="area-chip">Littleton</div>
-          </div>
-
-          <!-- Service Area Search -->
-          <div class="content-box">
-            <h3>Check Your Coverage Area</h3>
-            <p style="margin-bottom: 1rem; font-size: 0.95rem;">Enter your city or zip code to verify our availability.</p>
-            <div style="display: flex; gap: 1rem;">
-              <input type="text" id="areaSearchInput" class="form-control" placeholder="Enter your city (e.g. Aurora)">
-              <button id="areaSearchBtn" class="btn btn-secondary" style="flex-shrink: 0;">Check Area</button>
-            </div>
-            <div id="areaSearchResult" style="margin-top: 1rem; font-weight: 500; font-size: 1.1rem; min-height: 24px;"></div>
-          </div>
+        <!-- Left: Map Image -->
+        <div class="map-illustration">
+          <img src="assets/images/denver-map.png" alt="Denver Service Area Map" style="width: 100%; border-radius: 8px; border: 1px solid rgba(212, 175, 55, 0.2); box-shadow: 0 5px 20px rgba(0,0,0,0.5);">
         </div>
 
-        <!-- Right: Map -->
-        <div class="map-area fade-in" style="transition-delay: 0.2s; border-radius: 12px;">
-          <div class="night-map-container">
-            <img src="assets/images/denver-map.png" alt="Denver Service Area Map" class="night-map-img">
-            
-            <div class="map-pin pin-denver">
-              <div class="pin-dot"></div><div class="pin-label">Denver</div>
-            </div>
-            <div class="map-pin pin-aurora">
-              <div class="pin-dot"></div><div class="pin-label">Aurora</div>
-            </div>
-            <div class="map-pin pin-lakewood">
-              <div class="pin-dot"></div><div class="pin-label">Lakewood</div>
-            </div>
-            <div class="map-pin pin-thornton">
-              <div class="pin-dot"></div><div class="pin-label">Thornton</div>
-            </div>
-            <div class="map-pin pin-centennial">
-              <div class="pin-dot"></div><div class="pin-label">Centennial</div>
-            </div>
-            <div class="map-pin pin-westminster">
-              <div class="pin-dot"></div><div class="pin-label">Westminster</div>
-            </div>
-            <div class="map-pin pin-littleton">
-              <div class="pin-dot"></div><div class="pin-label">Littleton</div>
-            </div>
-          </div>
+        <!-- Right: Content -->
+        <div class="area-content">
+          <h3 style="color: var(--clr-gold); font-size: 2rem; margin-bottom: 1.5rem;">Rapid Response Across the Metro</h3>
+          <p style="color: var(--clr-text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">We know that being stranded on the side of the road is stressful. That's why we strategically position our fleet of modern flatbeds and heavy-duty wreckers throughout the Denver Metro area.</p>
+          <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+            <li style="margin-bottom: 1rem; color: var(--clr-white); display: flex; align-items: center; gap: 0.8rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <strong>20-30 Minute Average ETA</strong> in core zones
+            </li>
+            <li style="margin-bottom: 1rem; color: var(--clr-white); display: flex; align-items: center; gap: 0.8rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <strong>I-25 & I-70 Highway Recovery</strong> specialists
+            </li>
+            <li style="margin-bottom: 1rem; color: var(--clr-white); display: flex; align-items: center; gap: 0.8rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <strong>Local & Long Distance</strong> towing available
+            </li>
+          </ul>
+          <a href="contact.html" class="btn btn-secondary">Contact Dispatch</a>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <img src="assets/images/cta-bg.png" alt="Emergency Towing Denver" class="cta-bg">
-    <div class="container cta-content fade-in">
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container fade-in">
       <h2>Stranded? We Can Help.</h2>
       <p>Contact our live dispatch center for immediate assistance anywhere in our service area.</p>
       <div class="cta-buttons">
-        <a href="tel:+11234567890" class="btn btn-primary">Call Now</a>
-        <a href="reservation.html" class="btn btn-secondary">Book Online</a>
+        <a href="tel:+11234567890" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call Dispatch Now
+        </a>
+        <a href="reservation.html" class="btn btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Online
+        </a>
       </div>
     </div>
   </section>

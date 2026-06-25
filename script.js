@@ -15,11 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Mobile Menu Toggle ---
-  // A simple placeholder for mobile menu logic
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  mobileMenuBtn.addEventListener('click', () => {
-    alert('Mobile menu toggled (Navigation implementation would open here).');
-  });
+  const navLinks = document.querySelector('.nav-links');
+  
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('menu-open');
+    });
+  }
 
   // --- Scroll Animations (Intersection Observer) ---
   const fadeElements = document.querySelectorAll('.fade-in');
