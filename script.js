@@ -241,3 +241,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+  // --- Web3Forms AJAX Submission ---
+  const forms = document.querySelectorAll('form[action="https://api.web3forms.com/submit"]');
+  
+  forms.forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn ? submitBtn.innerText : 'Submit';
+      if (submitBtn) submitBtn.innerText = 'Sending...';
+      
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+      
+      // Remove any existing message
+      const existingMsg = form.nextElementSibling;
+      if (existingMsg && existingMsg.classList.contains('form-status-message')) {
+        existingMsg.remove();
+      }
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        });
+        
+        const result = await response.json();
+        
+        if (response.status == 200) {
+          form.reset();
+          showFormMessage(form, 'success', 'Thanks for connecting with Denver Express Towing. Your request has been received, and our dispatch team will contact you shortly.');
+        } else {
+          showFormMessage(form, 'error', 'Something went wrong. Please call +1-110-100-0000 for immediate towing help.');
+        }
+      } catch (error) {
+        showFormMessage(form, 'error', 'Something went wrong. Please call +1-110-100-0000 for immediate towing help.');
+      } finally {
+        if (submitBtn) submitBtn.innerText = originalBtnText;
+      }
+    });
+  });
+
+  function showFormMessage(form, type, message) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `form-status-message ${type}`;
+    
+    let iconSvg = '';
+    if (type === 'success') {
+      iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
+    } else {
+      iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>';
+    }
+    
+    msgDiv.innerHTML = `${iconSvg} <span>${message}</span>`;
+    
+    form.parentNode.insertBefore(msgDiv, form.nextSibling);
+  }

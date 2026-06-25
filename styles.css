@@ -465,3 +465,44 @@ body.menu-open { overflow: hidden; }
   .location-cards-grid { grid-template-columns: 1fr; }
   .area-details-grid { padding: 1.5rem; }
 }
+
+
+/* Form Status Messages */
+.form-status-message {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  background: var(--clr-bg-card);
+  border-left: 4px solid var(--clr-gold);
+  color: #fff;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideUpFade 0.4s ease forwards;
+  width: 100%;
+}
+.form-status-message.error {
+  border-left-color: #ff4d4d;
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.1);
+}
+.form-status-message svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.form-status-message.success svg {
+  color: var(--clr-gold);
+}
+.form-status-message.error svg {
+  color: #ff4d4d;
+}
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
