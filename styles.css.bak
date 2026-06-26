@@ -33,19 +33,12 @@ a { text-decoration: none; color: inherit; transition: var(--transition); }
 ul { list-style: none; }
 img, svg { max-width: 100%; display: block; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; outline: none; }
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 clamp(16px, 2.5vw, 24px); width: 100%; }
-.section-padding, .section { padding: clamp(45px, 8vw, 100px) 0; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 2rem; }
+.section-padding { padding: 6rem 0; }
 
 /* Typography */
-
-/* Global Fluid Typography */
-h1 { font-size: clamp(30px, 5vw, 64px); }
-h2 { font-size: clamp(26px, 4vw, 48px); }
-h3 { font-size: clamp(20px, 3vw, 30px); }
-p, li { font-size: clamp(15px, 2vw, 18px); line-height: 1.6; }
-h1, h2, h3, h4, h5, h6 { line-height: 1.15; font-weight: 700; }
-
-.section-title { font-size: clamp(26px, 4vw, 48px); margin-bottom: 1rem; text-align: center; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.2; font-weight: 700; }
+.section-title { font-size: 2.5rem; margin-bottom: 1rem; text-align: center; }
 .section-title span { color: var(--clr-gold); }
 .section-subtitle { text-align: center; color: var(--clr-text-muted); max-width: 600px; margin: 0 auto 3rem; font-size: 1.1rem; }
 
@@ -107,7 +100,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.15; font-weight: 700; }
 .hero-content {
   position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center;
 }
-.hero-text h1 { font-size: clamp(32px, 6vw, 64px); margin-bottom: 1.5rem; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
+.hero-text h1 { font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
 .hero-text h1 span { color: var(--clr-gold); display: block; }
 .hero-text p { font-size: 1.2rem; color: var(--clr-text-muted); margin-bottom: 2.5rem; max-width: 600px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
 .hero-buttons { display: flex; gap: 1rem; margin-bottom: 3rem; }
@@ -295,7 +288,7 @@ select.form-control {
 .cta-banner { position: relative; padding: 7rem 0; background-image: url('assets/images/cta-bg.png'); background-size: cover; background-position: center; text-align: center; }
 .cta-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(rgba(10, 10, 12, 0.85), rgba(10, 10, 12, 0.95)); }
 .cta-banner .container { position: relative; z-index: 2; }
-.cta-banner h2 { font-size: clamp(32px, 5vw, 56px); margin-bottom: 1rem; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
+.cta-banner h2 { font-size: 3.5rem; margin-bottom: 1rem; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
 .cta-banner p { font-size: 1.2rem; color: var(--clr-text-muted); margin-bottom: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
 .cta-buttons { display: flex; justify-content: center; gap: 1rem; }
 
@@ -361,7 +354,7 @@ select.form-control {
 /* Inner Page Sections */
 .inner-section { padding: 5rem 0; }
 .about-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem; }
-.about-intro-text h2 { font-size: clamp(28px, 4vw, 40px); color: #fff; margin-bottom: 0.5rem; }
+.about-intro-text h2 { font-size: 2.5rem; color: #fff; margin-bottom: 0.5rem; }
 .about-intro-text h3 { color: var(--clr-gold); font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 500; }
 .about-intro-text p { color: var(--clr-text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
 .about-intro-image img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid var(--clr-border); object-fit: cover; }
@@ -414,7 +407,7 @@ select.form-control {
 /* Estimator Box */
 .estimator-box { margin-top: 3rem; background: linear-gradient(135deg, rgba(212,175,55,0.1), rgba(0,0,0,0.5)); border: 1px solid var(--clr-gold); border-radius: 12px; padding: 2rem; text-align: center; }
 .estimator-box h3 { color: var(--clr-gold); margin-bottom: 1rem; }
-.estimate-result { font-size: clamp(28px, 4vw, 40px); font-weight: 800; color: #fff; margin: 1rem 0; }
+.estimate-result { font-size: 2.5rem; font-weight: 800; color: #fff; margin: 1rem 0; }
 
 /* Area Chips */
 .area-chip { background: rgba(20, 20, 26, 0.8); border: 1px solid rgba(212,175,55,0.3); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: 500; color: var(--clr-gold); }
@@ -422,111 +415,57 @@ select.form-control {
 /* Responsive */
 body.menu-open { overflow: hidden; }
 
-
-
-/* ==========================================================================
-   GLOBAL RESPONSIVE SYSTEM
-   ========================================================================== */
-
-/* ----------------------------------------
-   LAPTOP / DESKTOP (Max 1200px)
-   ---------------------------------------- */
-@media (max-width: 1200px) {
-  .hero-content { gap: 2rem; }
-  .trust-badges { gap: 2rem; padding-right: 2rem; }
-}
-
-/* ----------------------------------------
-   TABLET (Max 1024px)
-   ---------------------------------------- */
 @media (max-width: 1024px) {
   .hero-content { grid-template-columns: 1fr; text-align: center; }
-  .hero-text p { margin: 0 auto 2rem; }
+  .hero-text p { margin: 0 auto 2.5rem; }
   .hero-buttons { justify-content: center; }
   .hero-badges { justify-content: center; }
   .hero-visual { max-width: 600px; margin: 0 auto; }
-  
-  /* Convert multi-column to 2 columns where suitable */
-  .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
-  .steps-grid::before { display: none; } /* hide connecting line on smaller screens */
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-cards-grid { grid-template-columns: repeat(2, 1fr); }
   .dashboard-grid, .areas-container { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+  .steps-grid::before { display: none; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ----------------------------------------
-   MOBILE (Max 768px)
-   ---------------------------------------- */
 @media (max-width: 768px) {
-  /* Prevent horizontal scroll globally */
-  html, body { overflow-x: hidden; width: 100%; }
-
-  /* Navigation & Header */
-  .header .btn { display: none; } /* Hide main CTA in header */
+  /* Navigation */
+  .header .btn { display: none; }
   .mobile-menu-btn { display: block; z-index: 1001; position: relative; }
-  .nav-links { 
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
-    background: rgba(10, 10, 14, 0.98); backdrop-filter: blur(10px); 
-    flex-direction: column; align-items: center; justify-content: center; 
-    display: none; z-index: 1000; 
-  }
+  .nav-links { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(10, 10, 14, 0.98); backdrop-filter: blur(10px); flex-direction: column; align-items: center; justify-content: center; display: none; z-index: 1000; }
   .nav-links.active { display: flex; }
   .nav-links a { font-size: 1.5rem; margin: 1rem 0; }
-
-  /* Sticky UI Adjustments */
-  body { padding-bottom: 90px; } 
-  .whatsapp-float { bottom: 15px; right: 15px; width: 50px; height: 50px; }
-  .whatsapp-float svg { width: 25px; height: 25px; }
-
-  /* Universal Center Alignment for Mobile */
-  .section-title, .section-subtitle, .about-text, .inner-hero { text-align: center; margin-left: auto; margin-right: auto; }
   
-  /* Layout & Stacking - Force 1 Column */
-  .form-grid, .form-row, .reviews-grid, .footer-grid, 
-  .services-grid, .contact-cards-grid, .steps-grid, .stats-grid,
-  .location-cards-grid, .area-details-grid, .about-intro-grid { 
-    grid-template-columns: 1fr; gap: 2rem; 
-  }
-  
-  /* Footer */
-  .footer-grid { gap: 2.5rem; text-align: center; }
-  .footer-col { display: flex; flex-direction: column; align-items: center; justify-content: center; }
-  .footer-bottom { flex-direction: column; text-align: center; gap: 1rem; }
-  
-  /* Cards */
-  .service-card, .location-card, .contact-card, .step-card { 
-    padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center;
-  }
-  .service-card svg, .contact-card svg, .feature-icon, .step-number { margin-left: auto; margin-right: auto; }
-
-  /* Buttons */
-  .cta-buttons, .hero-buttons { flex-direction: column; width: 100%; gap: 1rem; align-items: center; }
-  .cta-buttons .btn, .hero-buttons .btn { width: 100%; justify-content: center; min-height: 48px; }
-
-  /* Form Overrides */
-  .premium-form-container { padding: 2rem 1.5rem; text-align: center; }
-  .form-group { text-align: left; /* Keep labels readable */ }
-  .booking-card { padding: 1.5rem; margin: 0 auto; width: 100%; max-width: 100%; }
+  /* Layout & Stacking */
+  body { padding-bottom: 80px; } /* Ensure sticky button doesn't hide footer content */
+  .hero-text h1 { font-size: 2.5rem; }
+  .inner-hero h1 { font-size: 2.5rem; }
+  .form-grid, .form-row, .reviews-grid, .footer-grid, .services-grid, .contact-cards-grid { grid-template-columns: 1fr; }
+  .footer-grid { gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 0.5rem; }
+  .cta-buttons { flex-direction: column; width: 100%; gap: 1rem; }
+  .cta-buttons .btn { width: 100%; justify-content: center; padding: 1.2rem; }
+  .about-intro-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .location-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .premium-form-container { padding: 2rem 1.5rem; }
+  .area-details-grid { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+  .map-illustration { margin-bottom: 1rem; }
   
   /* Prevent Overflows */
-  img, iframe { max-width: 100%; height: auto; border-radius: 8px; }
-  * { word-break: break-word; }
+  img, iframe { max-width: 100%; }
+  
+  /* Sticky UI Adjustments */
+  .whatsapp-float { bottom: 15px; right: 15px; width: 50px; height: 50px; }
+  .whatsapp-float svg { width: 25px; height: 25px; }
 }
 
-/* ----------------------------------------
-   SMALL MOBILE (Max 480px)
-   ---------------------------------------- */
 @media (max-width: 480px) {
-  .logo { font-size: 1.1rem; gap: 0.5rem; white-space: nowrap; }
-  .logo-icon-wrapper { width: 32px; height: 32px; min-width: 32px; }
-  .logo-icon-wrapper svg { width: 18px; height: 18px; }
-  
-  .btn { padding: 0.8rem; font-size: 0.9rem; }
-  
-  .trust-strip { padding: 1rem 0; }
-  .area-details-grid { padding: 1rem; }
+  .steps-grid, .stats-grid { grid-template-columns: 1fr; }
+  .hero-text h1 { font-size: 2rem; }
+  .inner-hero h1 { font-size: 2rem; }
+  .location-cards-grid { grid-template-columns: 1fr; }
+  .area-details-grid { padding: 1.5rem; }
 }
+
 
 /* Form Status Messages */
 .form-status-message {
@@ -550,7 +489,96 @@ body.menu-open { overflow: hidden; }
   border-left-color: #ff4d4d;
   box-shadow: 0 4px 15px rgba(255, 77, 77, 0.1);
 }
-.form-status-message svg { flex-shrink: 0; width: 24px; height: 24px; }
-.form-status-message.success svg { color: var(--clr-gold); }
-.form-status-message.error svg { color: #ff4d4d; }
-@keyframes slideUpFade { to { opacity: 1; transform: translateY(0); } }
+.form-status-message svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.form-status-message.success svg {
+  color: var(--clr-gold);
+}
+.form-status-message.error svg {
+  color: #ff4d4d;
+}
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* --- STRICT MOBILE OVERRIDES --- */
+@media (max-width: 768px) {
+  /* Prevent any horizontal scrolling */
+  html, body { overflow-x: hidden !important; width: 100% !important; }
+  
+  /* Logo constraints to fix menu overlap */
+  .logo { font-size: 1.1rem !important; gap: 0.5rem !important; white-space: nowrap !important; }
+  .logo-icon-wrapper { width: 28px !important; height: 28px !important; min-width: 28px !important; }
+  .logo-icon-wrapper svg { width: 15px !important; height: 15px !important; margin: 0 !important; }
+
+  /* Strict Universal Centering */
+  body, .section, .inner-hero, .footer-col, .service-card, .location-card, .contact-card, .about-text, .form-group, .premium-form-container, .hero-text, .cta-banner, .section-title, p, h1, h2, h3, h4, h5, h6 {
+    text-align: center !important;
+  }
+
+  /* Strict Flexbox Centering */
+  .footer-col, .service-card, .location-card, .contact-card, .cta-buttons, .hero-buttons, .form-row, .about-intro-grid, .footer-bottom, .footer-links, .footer-contact {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Form Elements Centering */
+  label { text-align: center !important; display: block !important; width: 100% !important; }
+  input, select, textarea { 
+    text-align: center !important; 
+    margin-left: auto !important; 
+    margin-right: auto !important; 
+  }
+  
+  /* Icons & Images Centering */
+  .service-card svg, .contact-card svg, .footer-contact svg, .feature-icon { 
+    margin-left: auto !important; 
+    margin-right: auto !important; 
+    display: block !important; 
+  }
+  img, iframe { 
+    max-width: 100% !important; 
+    height: auto !important; 
+    margin-left: auto !important; 
+    margin-right: auto !important; 
+    display: block !important; 
+  }
+
+  /* Padding & Margin Fixes for ALL Sections */
+  .section { 
+    padding: 3rem 1.5rem !important; /* Force horizontal padding everywhere */
+    overflow: hidden !important;
+  }
+  .container { 
+    padding: 0 !important; /* Avoid double padding since section now has it */
+    width: 100% !important; 
+    max-width: 100% !important; 
+  }
+  .hero, .inner-hero { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .booking-card { padding: 2rem 1.5rem !important; margin: 0 auto !important; width: 100% !important; }
+  
+  /* Grid Fixes (force 1 column) */
+  .services-grid, .service-list-grid, .steps-grid, .stats-grid, .contact-cards-grid, .location-cards-grid, .area-details-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  /* Sticky CTA Fix */
+  body { padding-bottom: 90px !important; }
+  .sticky-cta { z-index: 999 !important; }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1, .inner-hero h1, .section-title { font-size: 1.8rem !important; }
+  .btn { padding: 1rem !important; font-size: 0.95rem !important; width: 100% !important; }
+}
