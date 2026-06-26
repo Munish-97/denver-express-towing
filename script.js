@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.toggle('active');
       document.body.classList.toggle('menu-open');
     });
+    // Close menu when a link is clicked
+    const menuLinks = navLinks.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        document.body.classList.remove('menu-open');
+      });
+    });
+
   }
 
   // --- Scroll Animations (Intersection Observer) ---
