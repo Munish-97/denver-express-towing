@@ -507,56 +507,78 @@ body.menu-open { overflow: hidden; }
   }
 }
 
-/* Additional Mobile Fixes */
+
+/* --- STRICT MOBILE OVERRIDES --- */
 @media (max-width: 768px) {
-  .container { padding: 0 1rem !important; }
-  .section { padding: 4rem 0 !important; }
-  .services-grid, .service-list-grid, .steps-grid, .stats-grid, .contact-cards-grid, .location-cards-grid, .area-details-grid {
-    grid-template-columns: 1fr !important;
+  /* Prevent any horizontal scrolling */
+  html, body { overflow-x: hidden !important; width: 100% !important; }
+  
+  /* Logo constraints to fix menu overlap */
+  .logo { font-size: 1.1rem !important; gap: 0.5rem !important; white-space: nowrap !important; }
+  .logo-icon-wrapper { width: 28px !important; height: 28px !important; min-width: 28px !important; }
+  .logo-icon-wrapper svg { width: 15px !important; height: 15px !important; margin: 0 !important; }
+
+  /* Strict Universal Centering */
+  body, .section, .inner-hero, .footer-col, .service-card, .location-card, .contact-card, .about-text, .form-group, .premium-form-container, .hero-text, .cta-banner, .section-title, p, h1, h2, h3, h4, h5, h6 {
+    text-align: center !important;
   }
-  .hero-text h1 { font-size: 2.2rem !important; }
-  .booking-card { padding: 1.5rem !important; margin: 0 1rem; }
+
+  /* Strict Flexbox Centering */
+  .footer-col, .service-card, .location-card, .contact-card, .cta-buttons, .hero-buttons, .form-row, .about-intro-grid, .footer-bottom, .footer-links, .footer-contact {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Form Elements Centering */
+  label { text-align: center !important; display: block !important; width: 100% !important; }
+  input, select, textarea { 
+    text-align: center !important; 
+    margin-left: auto !important; 
+    margin-right: auto !important; 
+  }
   
-  /* Fix sticky cta overlapping */
+  /* Icons & Images Centering */
+  .service-card svg, .contact-card svg, .footer-contact svg, .feature-icon { 
+    margin-left: auto !important; 
+    margin-right: auto !important; 
+    display: block !important; 
+  }
+  img, iframe { 
+    max-width: 100% !important; 
+    height: auto !important; 
+    margin-left: auto !important; 
+    margin-right: auto !important; 
+    display: block !important; 
+  }
+
+  /* Padding & Margin Fixes for ALL Sections */
+  .section { 
+    padding: 3rem 1.5rem !important; /* Force horizontal padding everywhere */
+    overflow: hidden !important;
+  }
+  .container { 
+    padding: 0 !important; /* Avoid double padding since section now has it */
+    width: 100% !important; 
+    max-width: 100% !important; 
+  }
+  .hero, .inner-hero { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .booking-card { padding: 2rem 1.5rem !important; margin: 0 auto !important; width: 100% !important; }
+  
+  /* Grid Fixes (force 1 column) */
+  .services-grid, .service-list-grid, .steps-grid, .stats-grid, .contact-cards-grid, .location-cards-grid, .area-details-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  /* Sticky CTA Fix */
   body { padding-bottom: 90px !important; }
-  .sticky-cta { z-index: 999; }
-  
-  /* Make sure images and long words don't overflow */
-  * { word-break: break-word; }
+  .sticky-cta { z-index: 999 !important; }
 }
 
 @media (max-width: 480px) {
-  .section { padding: 3rem 0 !important; }
-  .hero-text h1 { font-size: 1.8rem !important; }
-  .btn { padding: 1rem !important; font-size: 0.95rem; }
-}
-
-/* Ensure no horizontal scrolling overall */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-/* Additional Mobile Polish */
-@media (max-width: 768px) {
-  /* Fix logo width touching menu icon */
-  .logo { font-size: 1.1rem !important; gap: 0.5rem !important; white-space: nowrap; }
-  .logo-icon-wrapper { width: 30px !important; height: 30px !important; min-width: 30px !important; }
-  .logo-icon-wrapper svg { width: 16px !important; height: 16px !important; }
-
-  /* Center alignment for sections and content */
-  .section, .inner-hero, .footer-col, .service-card, .location-card, .contact-card, .about-text {
-    text-align: center !important;
-  }
-  
-  /* Center flex items */
-  .footer-col, .service-card, .location-card, .contact-card {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-  }
-  
-  /* Form groups should remain readable (left aligned) but their container can be centered */
-  .form-group { text-align: left !important; }
-  
-  /* Ensure SVG icons in cards have a centered margin */
-  .service-card svg, .contact-card svg { margin-left: auto; margin-right: auto; }
+  .hero-text h1, .inner-hero h1, .section-title { font-size: 1.8rem !important; }
+  .btn { padding: 1rem !important; font-size: 0.95rem !important; width: 100% !important; }
 }
