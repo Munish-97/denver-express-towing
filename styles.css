@@ -671,26 +671,16 @@ img {
   }
 }
 
-/* ==========================================================================
-   FINAL INNER PAGE FIXES (H2, Maps, Images)
-   ========================================================================== */
 
-/* 1. Reduce H2 Size on Inner Pages */
-.inner-page h2,
-.service-area-page h2,
-.services-page h2,
-.reservation-page h2,
-.contact-page h2 {
+/* --- SERVICE AREA PAGE SPECIFIC FIXES --- */
+/* 1. Reduce H2 Size on Service Area Page */
+.service-area-page h2 {
   font-size: clamp(24px, 4.5vw, 34px);
   line-height: 1.18;
 }
 
 @media (max-width: 767px) {
-  .inner-page h2,
-  .service-area-page h2,
-  .services-page h2,
-  .reservation-page h2,
-  .contact-page h2 {
+  .service-area-page h2 {
     font-size: clamp(22px, 6vw, 28px) !important;
     line-height: 1.2 !important;
     text-align: center !important;
@@ -699,21 +689,27 @@ img {
 
 /* 2. Service Area Page Image Center Alignment */
 @media (max-width: 1024px) {
-  .service-area-page .image-wrapper,
-  .service-area-page .section-image,
+  .service-area-page .image-column,
+  .service-area-page .visual-column,
   .service-area-page .area-image,
-  .service-area-page .map-image,
-  .service-area-page img {
+  .service-area-page .section-image,
+  .service-area-page .image-wrapper,
+  .service-area-page .map-illustration {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    text-align: center !important;
   }
 
-  .service-area-page .image-wrapper img,
-  .service-area-page .section-image img,
+  .service-area-page .image-column img,
+  .service-area-page .visual-column img,
   .service-area-page .area-image img,
-  .service-area-page .map-image img,
-  .service-area-page img {
+  .service-area-page .section-image img,
+  .service-area-page .image-wrapper img,
+  .service-area-page .map-illustration img {
     display: block !important;
     width: 100% !important;
     max-width: 520px !important;
@@ -721,42 +717,5 @@ img {
     margin-left: auto !important;
     margin-right: auto !important;
     object-fit: cover !important;
-  }
-
-  .service-area-page .image-column,
-  .service-area-page .visual-column,
-  .service-area-page .area-details-grid > div:last-child {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-}
-
-/* 3. Contact Page Mobile Map Height Fix */
-.contact-page .map-wrapper,
-.contact-page .contact-map,
-.contact-page iframe {
-  width: 100%;
-  min-height: 360px;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-@media (max-width: 767px) {
-  .contact-page .map-wrapper,
-  .contact-page .contact-map,
-  .contact-page iframe {
-    min-height: 320px !important;
-    height: 320px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-page .map-wrapper,
-  .contact-page .contact-map,
-  .contact-page iframe {
-    min-height: 300px !important;
-    height: 300px !important;
   }
 }
